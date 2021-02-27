@@ -1,0 +1,9 @@
+/* Styles for Question Component */
+.question {
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.text {
+    font-family: 'Lato', sans-serif;
+}

@@ -1,0 +1,100 @@
+/* Styles for Materialize's Settings */
+.sidenav {
+    background-color: #19265A !important;
+}
+
+.sidenav li > a {
+    color: #FFF;
+}
+
+/* ******* Styles for Component Header ******* */
+
+.navBar {
+    height: 100px;
+    background: white;
+    box-shadow: none;
+    color: black;
+}
+
+/* Media Query for Mobile Screen */
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 100px;
+    }
+
+    .navWrapper {
+        height: 100%;
+    }
+
+    .divLogo {
+        left: 25% !important;
+    }
+
+    .logoImg {
+        display: block;
+        width: 175px;
+    }
+}
+
+/* Media Query for Tablets Screen */
+@media only screen and (min-width: 601px) {
+    .header {
+        height: 200px;
+    }
+
+    .navWrapper {
+        height: 50% !important;
+    }
+
+    .logoImg {
+        display: block;
+        margin: auto;
+        width: 250px;
+    }
+
+    .navBar {
+        height: 200px !important;
+    }
+
+    .nav {
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+
+/* Media Query for Desktop Screen */
+@media only screen and (min-width: 993px) {
+    .header {
+        height: 95px;
+    }
+
+    .logoImg {
+        margin-left: 100px;
+        width: 175px;
+    }
+
+    .navBar {
+        height: 100px !important;
+    }
+
+    .nav {
+        margin-top: revert;
+        margin-right: 100px;
+    }
+}
+
+/* Navigation */
+.nav li {
+    margin: 0 24px;
+}
+
+.nav li > a {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+.nav li > a:hover {
+    transform: scale(1.1);
+    background: none;
+}

@@ -1,0 +1,43 @@
+/* Styles for the About Component */
+.about {
+    width: 98%;
+    padding: 50px;
+    margin: auto;
+    position: relative;
+    background: linear-gradient(0deg, lightcyan, white);
+    border-radius: 100px;
+    top: -160px;
+}
+
+.logo {
+    margin: auto;
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+.img {
+    width: 100%;
+}
+
+.ask {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.url {
+    text-align: right;
+    position: relative;
+    display: block;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}

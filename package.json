@@ -1,0 +1,30 @@
+{
+  "name": "infobit",
+  "version": "1.0.0",
+  "description": "SPA for Cryptocurrencies info",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Server1567/infoBit.git"
+  },
+  "keywords": [
+    "infoBit",
+    "react",
+    "spa",
+    "cryptocurrencies",
+    "project",
+    "stateful-components"
+  ],
+  "author": "Server1567",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Server1567/infoBit/issues"
+  },
+  "homepage": "/",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

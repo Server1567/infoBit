@@ -1,0 +1,16 @@
+/* Default Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Road Rage';
+    src: url('Road_Rage.otf');
+}
+
+/* Styles of Materialize's Settings */
+.sidenav-overlay {
+    z-index: 996 !important;
+}
