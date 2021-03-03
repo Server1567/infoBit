@@ -3,6 +3,7 @@
 
 import React, { Component, Fragment } from 'react'
 import styles from './About.module.css'
+import PubSub from 'pubsub-js'
 import axios from 'axios'
 
 class About extends Component {
@@ -13,8 +14,12 @@ class About extends Component {
         this.state = {
             trending: props.currency,
             info: "",
-            url: ""
+            url: "",
+            height: 458,
+            pixels: 0
         }
+
+        this.about = React.createRef()
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -46,21 +51,46 @@ class About extends Component {
             .catch(err => console.log("Something has get out wrong. " + err))
     }
 
+    calcHeigh = () => {
+        var heightNow = this.about.current.clientHeight
+        var obj = {
+            'height_initial': this.state.height,
+            'heightnow': heightNow,
+            'pixels': Math.abs(this.state.height - heightNow)
+        }
+        this.setState({ pixels: obj.pixels })
+        PubSub.publish('pixels', obj)
+        return obj.pixels
+    }
+
     // Initialization for an timeout that update the info in 500ms and an interval each 7s
     componentDidMount() {
         this.timeout = setTimeout(() => this.requestInfo(), 500)
         this.interval = setInterval(() => this.requestInfo(), 7000)
+
+        // Debo averiguar la manera poner el About alineado al centro del Trending
+
+        // var about = this.about.current
+        // var h = about.clientHeight
+        // // Assignment for the Height Div
+        // this.setState({ height: h })
+        this.heightTimeout = setTimeout(() => this.calcHeigh(), 1000)
+
+        window.addEventListener('resize', () => this.calcHeigh(), false)
     }
 
     // Destroyment timeouts and intervals for Performancing of the Component
     componentWillUnmount() {
         clearTimeout(this.timeout)
+        clearTimeout(this.heightTimeout)
         clearInterval(this.interval)
+        window.removeEventListener('resize', () => this.calcHeigh(), false)
     }
 
     render() {
+
         return (
-            <div className={styles.about}>
+            <div className={styles.about} ref={this.about} style={{top: `${-222 - (this.state.pixels)}px`}}>
                 <div className="row">
                     <div className="col s12">
                         <center>

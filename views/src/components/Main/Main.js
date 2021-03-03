@@ -28,7 +28,7 @@ class Main extends Component {
         if (this.state.switcher) {
             return (
                 <Fragment>
-                    <Question />
+                    <Question text="What to invest in now?" />
                     <Trending currency={this.state.trending} />
                     <About currency={this.state.trending} />
                 </Fragment>

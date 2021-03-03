@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.2.0",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
-    "colorthief": "^2.3.2",
+    "color.js": "^1.2.0",
     "material-icons": "^0.3.1",
     "materialize-css": "^1.0.0-rc.2",
     "pubsub-js": "^1.9.1",

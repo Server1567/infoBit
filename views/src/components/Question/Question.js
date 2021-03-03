@@ -5,7 +5,7 @@ class Question extends Component {
     render() {
         return (
             <center className={styles.question}>
-                <h5 className={styles.text}>What to invest in now?</h5>
+                <h5 className={styles.text}>{this.props.text}</h5>
             </center>
         )
     }
