@@ -64,12 +64,13 @@ class Trending extends Component {
         var g = 255 - this.state.color[1]
         var b = 255 - this.state.color[2]
         var tone = 1 / 2 * (Math.max(r,g,b) + Math.min(r,g,b))
-
+        console.log(this.state.color)
         // If the background has dark tone put white text, if it's light tone put them black
         if (tone > 127) {
             var toneText = 0
         }
         else {
+            // eslint-disable-next-line
             var toneText = 255
         }
 

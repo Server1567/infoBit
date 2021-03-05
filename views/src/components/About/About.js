@@ -46,18 +46,33 @@ class About extends Component {
 
                 let arrayInfo = info.split('.')
                 let index = info.split('.').indexOf(" More information can be found at https://www")
-                this.setState({ info: arrayInfo.slice(0, index).join('.') + ".", url})
+                this.setState({ info: arrayInfo.slice(0, index).join('.') + ".", url })
             })
             .catch(err => console.log("Something has get out wrong. " + err))
     }
 
     calcHeigh = () => {
+        var widthNow = this.about.current.clientWidth
         var heightNow = this.about.current.clientHeight
         var obj = {
             'height_initial': this.state.height,
             'heightnow': heightNow,
             'pixels': Math.abs(this.state.height - heightNow)
         }
+
+        // Adjust pixels for Middle Screen
+        if (widthNow < 973 && widthNow > 580) {
+            obj.pixels = 100
+        }
+        // Adjust pixels for Mobile Screen
+        else if (widthNow < 574 && widthNow > 331) {
+            obj.pixels = 150
+        }
+        // Adjust pixels for Mobile Screen XS
+        else if (widthNow < 331) {
+            obj.pixels = 200
+        }
+
         this.setState({ pixels: obj.pixels })
         PubSub.publish('pixels', obj)
         return obj.pixels
@@ -67,15 +82,7 @@ class About extends Component {
     componentDidMount() {
         this.timeout = setTimeout(() => this.requestInfo(), 500)
         this.interval = setInterval(() => this.requestInfo(), 7000)
-
-        // Debo averiguar la manera poner el About alineado al centro del Trending
-
-        // var about = this.about.current
-        // var h = about.clientHeight
-        // // Assignment for the Height Div
-        // this.setState({ height: h })
         this.heightTimeout = setTimeout(() => this.calcHeigh(), 1000)
-
         window.addEventListener('resize', () => this.calcHeigh(), false)
     }
 
@@ -88,7 +95,6 @@ class About extends Component {
     }
 
     render() {
-
         return (
             <div className={styles.about} ref={this.about} style={{top: `${-222 - (this.state.pixels)}px`}}>
                 <div className="row">
