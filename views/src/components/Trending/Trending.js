@@ -36,25 +36,32 @@ class Trending extends Component {
         PubSub.subscribe('pixels', (e, data) => {
             this.setState({ pixels: data.pixels })
         })
-        this.timeout = setTimeout(() => {
-            var image = this.logo.current
-            image.addEventListener('load', () => this.getColor(image), false)
-        }, 500)
+
+        this.image = this.logo.current
+        this.imgOnTime = this.logo.current
+
+        this.image.addEventListener('load', () => this.getColor(this.image), false)
 
         this.interval = setInterval(() => {
-            var image = this.logo.current
-            image.addEventListener('load', () => this.getColor(image), false)
+            this.imgOnTime.addEventListener('load', () => {
+                // If console.log() runs, the Component is done, then, remove that line.
+                // Else, work on it.
+                console.log('ON RUNNING 7 SECONDS')
+                this.getColor(this.imgOnTime)
+            }, false)
         }, 7000)
     }
 
     componentWillUnmount() {
-        var image = this.logo.current
-        image.removeEventListener('load', () => this.getColor(image), false)
+        this.image.removeEventListener('load', () => this.getColor(this.image), false)
 
-        if(this.timeout) {
-            clearTimeout(this.timeout)
-        }
         if (this.interval) {
+            this.imgOnTime.removeEventListener('load', () => {
+                // If console.log() runs, the Component is done, then, remove that line.
+                // Else, work on it.
+                console.log('ON RUNNING 7 SECONDS')
+                this.getColor(this.imgOnTime)
+            }, false)
             clearInterval(this.interval)
         }
     }
@@ -64,7 +71,6 @@ class Trending extends Component {
         var g = 255 - this.state.color[1]
         var b = 255 - this.state.color[2]
         var tone = 1 / 2 * (Math.max(r,g,b) + Math.min(r,g,b))
-        console.log(this.state.color)
         // If the background has dark tone put white text, if it's light tone put them black
         if (tone > 127) {
             var toneText = 0
