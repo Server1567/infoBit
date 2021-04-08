@@ -39,7 +39,7 @@ app.post('/info-trending', function (req, res, next) {
             return res.status(404).json({ message: "Something has get out wrong", error: err })
         })
     } catch (e) {
-        console.error('Something has wrong')
+        console.error('Something has wrong with About Component')
         console.error(e.message)
         console.error('')
         console.error(e)

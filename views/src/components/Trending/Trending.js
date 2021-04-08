@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react'
 import styles from './Trending.module.css'
-import { average } from 'color.js'
 import PubSub from 'pubsub-js'
 import axios from 'axios'
-import imagen from './beneficios-Sandia.jpg'
+import ColorThief from 'colorthief/dist/color-thief.mjs'
 
 class Trending extends PureComponent {
     // Assignment of Component's State and Refs
@@ -17,7 +16,6 @@ class Trending extends PureComponent {
         }
 
         this.logo = React.createRef()
-        this.logo1 = React.createRef()
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -29,21 +27,10 @@ class Trending extends PureComponent {
         return null
     }
 
-    // Get Image Independently to avoid problems with CORS
-    getImage = () => {
-        axios.get('http://farmaciasecadero.com/blog/wp-content/uploads/2018/05/beneficios-Sandia.jpg', {
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
-            .then(res => console.log(res))
-            .catch(e => console.error('It was an error getting the picture.'))
-    }
-
     // Get Color From Image Logo
     getColor = (img) => {
-        average(img)
-            .then(color => this.setState({ color: color }))
+        const colorThief = new ColorThief()
+        this.setState({ color: colorThief.getColor(img) })
     }
 
     componentDidMount() {
@@ -52,10 +39,8 @@ class Trending extends PureComponent {
         })
 
         // Modify Image-Path-Due to CORS Issues
-        this.image = this.logo1.current
-        this.imgOnTime = this.logo1.current
-
-        this.getImage()
+        this.image = this.logo.current
+        this.imgOnTime = this.logo.current
 
         this.image.addEventListener('load', () => this.getColor(this.image), false)
 
@@ -63,7 +48,7 @@ class Trending extends PureComponent {
             this.imgOnTime.addEventListener('load', () => {
                 // If console.log() runs, the Component is done, then, remove that line.
                 // Else, work on it.
-                console.log('ON RUNNING 7 SECONDS')
+                window.alert("INFORMA AL CREADOR SI VES ESTA VENTANA EMERGENTE")
                 this.getColor(this.imgOnTime)
             }, false)
         }, 7000)
@@ -76,11 +61,13 @@ class Trending extends PureComponent {
             this.imgOnTime.removeEventListener('load', () => {
                 // If console.log() runs, the Component is done, then, remove that line.
                 // Else, work on it.
-                console.log('ON RUNNING 7 SECONDS')
+                window.alert("INFORMA AL CREADOR SI VES ESTA VENTANA EMERGENTE")
                 this.getColor(this.imgOnTime)
             }, false)
             clearInterval(this.interval)
         }
+
+        PubSub.unsubscribe('pixels')
     }
 
     render() {
@@ -97,6 +84,11 @@ class Trending extends PureComponent {
             var toneText = 255
         }
 
+        // Proxy for Getting Image Logo anti-CORS
+        var googleProxyURL = 'https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&refresh=2592000&url=';
+        var imageURL = this.state.trending.logo
+        var imageSRC = googleProxyURL + encodeURIComponent(imageURL)
+
         return (
             <div className={styles.background} style={{
                     backgroundColor: `rgb(${r}, ${g}, ${b})`,
@@ -106,15 +98,11 @@ class Trending extends PureComponent {
                     <div className="col s12 m6">
                         <div className={styles.illustration}>
                             <img
-                                src={this.state.trending.logo}
+                                src={imageSRC}
                                 alt="currency-logo"
                                 className={styles.imgLogo}
+                                crossOrigin="Anonymous"
                                 ref={this.logo} />
-                            <img
-                                src={imagen}
-                                alt="currency-logo"
-                                className={styles.imgLogo}
-                                ref={this.logo1} />
                             <br/><br/>
                             <h3 className={styles.price} style={{color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`}}>
                                 {this.state.trending.price}
