@@ -1,12 +1,9 @@
-/*eslint no-eval: "off"*/
-/*eslint-env es6*/
-
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import styles from './About.module.css'
 import PubSub from 'pubsub-js'
 import axios from 'axios'
 
-class About extends Component {
+class About extends PureComponent {
     // Assignment of properties and state's Component
     constructor(props) {
         super(props)
@@ -34,21 +31,20 @@ class About extends Component {
     // Request to an API for to get Info about the Trending Cryptocurrency
     requestInfo = () => {
         var symbol = this.state.trending.symbol
-        axios.get(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=${symbol}`, {
-            headers: {
-                'X-CMC_PRO_API_KEY': 'dca0b296-abb2-482f-887e-2f0757bc3767',
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
+
+        axios.post('/info-trending', { sym: symbol })
             .then(resp => {
-                let info = eval(`resp.data.data.${symbol}.description`)
-                let url = eval(`resp.data.data.${symbol}.urls.website[0]`)
+                let info = resp.data.message
+                let url = resp.data.url
 
                 let arrayInfo = info.split('.')
                 let index = info.split('.').indexOf(" More information can be found at https://www")
+
                 this.setState({ info: arrayInfo.slice(0, index).join('.') + ".", url })
+            }).catch(e => {
+                this.setState({ info: "An error occurred while receiving data from the Backend." })
+                console.error(e)
             })
-            .catch(err => console.log("Something has get out wrong. " + err))
     }
 
     calcHeigh = () => {

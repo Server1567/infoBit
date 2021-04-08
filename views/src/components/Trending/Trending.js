@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import styles from './Trending.module.css'
-import { prominent } from 'color.js'
+import { average } from 'color.js'
 import PubSub from 'pubsub-js'
+import axios from 'axios'
+import imagen from './beneficios-Sandia.jpg'
 
-class Trending extends Component {
+class Trending extends PureComponent {
     // Assignment of Component's State and Refs
     constructor(props) {
         super(props)
@@ -15,6 +17,7 @@ class Trending extends Component {
         }
 
         this.logo = React.createRef()
+        this.logo1 = React.createRef()
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -26,10 +29,21 @@ class Trending extends Component {
         return null
     }
 
+    // Get Image Independently to avoid problems with CORS
+    getImage = () => {
+        axios.get('http://farmaciasecadero.com/blog/wp-content/uploads/2018/05/beneficios-Sandia.jpg', {
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
+            .then(res => console.log(res))
+            .catch(e => console.error('It was an error getting the picture.'))
+    }
+
     // Get Color From Image Logo
     getColor = (img) => {
-        prominent(img)
-            .then(color => this.setState({ color: color[1] }))
+        average(img)
+            .then(color => this.setState({ color: color }))
     }
 
     componentDidMount() {
@@ -37,8 +51,11 @@ class Trending extends Component {
             this.setState({ pixels: data.pixels })
         })
 
-        this.image = this.logo.current
-        this.imgOnTime = this.logo.current
+        // Modify Image-Path-Due to CORS Issues
+        this.image = this.logo1.current
+        this.imgOnTime = this.logo1.current
+
+        this.getImage()
 
         this.image.addEventListener('load', () => this.getColor(this.image), false)
 
@@ -93,6 +110,11 @@ class Trending extends Component {
                                 alt="currency-logo"
                                 className={styles.imgLogo}
                                 ref={this.logo} />
+                            <img
+                                src={imagen}
+                                alt="currency-logo"
+                                className={styles.imgLogo}
+                                ref={this.logo1} />
                             <br/><br/>
                             <h3 className={styles.price} style={{color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`}}>
                                 {this.state.trending.price}
