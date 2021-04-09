@@ -33,7 +33,7 @@ class Currency extends Component {
     // Trade de Currency Changes
     trade = () => {
         var price = this.state.currency.RAW.USD.PRICE
-        const prices = this.state.trading
+        var prices = this.state.trading
         prices.shift()
         prices.push(price)
         this.setState({ trading: prices })

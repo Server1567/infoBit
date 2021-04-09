@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Currency from '../Currency'
 import Error from '../Error'
 import axios from 'axios'
 import PubSub from 'pubsub-js'
 
-class Dashboard extends Component {
+class Dashboard extends PureComponent {
     // Assignment of State's Component
     constructor(props) {
         super(props)

@@ -40,8 +40,8 @@ class Error extends Component {
         return (
             <div className="col s12">
                 <div className="card" style={{padding: '115px 50px', borderRadius: '25px'}}>
-                    {/* Spinner of Loading */}
                     <div>
+                        {/* Spinner of Loading */}
                         <div className="preloader-wrapper small active" style={{display: 'inline-block'}}>
                             <div className="spinner-layer spinner-red-only">
                                 <div className="circle-clipper left">
@@ -55,6 +55,7 @@ class Error extends Component {
                                 </div>
                             </div>
                         </div>
+                        
                         <h3 style={{color: '#db4437'}}>Error connecting to the Market :/</h3>
                     </div>
                     <h4 style={{color: 'darkgray'}}>We are working to fix it :v</h4>

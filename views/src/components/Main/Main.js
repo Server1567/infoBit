@@ -24,6 +24,15 @@ class Main extends Component {
         return null
     }
 
+    // Switcher for Component Rendering
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.trending.symbol !== nextProps.trending.symbol) {
+            return true
+        }
+
+        return false
+    }
+
     render() {
         if (this.state.switcher) {
             return (
@@ -34,6 +43,7 @@ class Main extends Component {
                 </Fragment>
             )
         }
+
         return null
     }
 }
