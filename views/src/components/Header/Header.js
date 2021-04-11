@@ -12,7 +12,7 @@ class Header extends Component {
         this.mobile = React.createRef()
     }
 
-    // Function Menu on Mobile Screen with Materialize
+    // Arrow Function Menu on Mobile Screen with Materialize
     sideNav = () => M.Sidenav.init(this.mobile.current, { edge: 'right' })
 
     // Run de Menu Function
@@ -41,29 +41,29 @@ class Header extends Component {
                             </a>
                             {/* Navigation for Desktop */}
                             <ul className={`right hide-on-med-and-down ${styles.nav}`}>
-                                <li><a href="sass.html">Cryptocurrencies</a></li>
-                                <li><a href="badges.html">Trending</a></li>
-                                <li><a href="collapsible.html">About</a></li>
-                                <li><a href="mobile.html">Portals</a></li>
+                                <li><a href="/">Cryptocurrencies</a></li>
+                                <li><a href="/">Trending</a></li>
+                                <li><a href="/">About</a></li>
+                                <li><a href="/">Portals</a></li>
                             </ul>
                         </div>
                         {/* Navigation for Tablets */}
                         <div className="nav-content" style={{display: 'flex', height: '50%'}}>
                             <ul className={`hide-on-small-only hide-on-large-only ${styles.nav}`}>
-                                <li><a href="sass.html">Cryptocurrencies</a></li>
-                                <li><a href="badges.html">Trending</a></li>
-                                <li><a href="collapsible.html">About</a></li>
-                                <li><a href="mobile.html">Portals</a></li>
+                                <li><a href="/">Cryptocurrencies</a></li>
+                                <li><a href="/">Trending</a></li>
+                                <li><a href="/">About</a></li>
+                                <li><a href="/">Portals</a></li>
                             </ul>
                         </div>
                     </nav>
                     {/* Navigation for Mobile */}
                     <ul className={`sidenav ${styles.sidenav}`} id="mobile-demo" ref={this.mobile}>
                         <br/><br/><br/>
-                        <li><a href="sass.html">Cryptocurrencies</a></li><br/>
-                        <li><a href="badges.html">Trending</a></li><br/>
-                        <li><a href="collapsible.html">About</a></li><br/>
-                        <li><a href="mobile.html">Portals</a></li>
+                        <li><a href="/">Cryptocurrencies</a></li><br/>
+                        <li><a href="/">Trending</a></li><br/>
+                        <li><a href="/">About</a></li><br/>
+                        <li><a href="/">Portals</a></li>
                     </ul>
                 </div>
             </header>

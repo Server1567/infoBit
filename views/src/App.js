@@ -16,6 +16,7 @@ class App extends Component {
         }
     }
 
+    // Initialize eavesdropping on information transmissions from other components
     componentDidMount() {
         PubSub.subscribe('currency-trending', (e, currency) => {
             this.setState({

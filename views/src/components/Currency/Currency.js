@@ -5,7 +5,7 @@ import Chart from 'chart.js'
 import PubSub from 'pubsub-js'
 
 class Currency extends Component {
-    // Assignment of properties and state's Component
+    // Assignment of properties and State's Component
     constructor(props) {
         super(props)
 
@@ -27,7 +27,7 @@ class Currency extends Component {
         this.porcent = React.createRef()
     }
 
-    // Get the Price Now
+    // Get the Price Now and Show it as a Tooltip
     tooltip = () => M.Tooltip.init(this.porcent.current)
 
     // Trade de Currency Changes

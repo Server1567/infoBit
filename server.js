@@ -7,12 +7,12 @@ const axios = require('axios')
 app.use(express.static(path.join(__dirname, 'views/build')))
 app.use(express.json())
 
-// What will happen when the / path is requested
+// What will happen when the '/' path is requested
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/build', 'index.html'))
 })
 
-// What will happen when the /info-trending path is requested
+// What will happen when the '/info-trending' path is requested
 app.post('/info-trending', function (req, res, next) {
     try {
         // Validate if the client isn't sending data.

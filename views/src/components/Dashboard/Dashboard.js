@@ -26,6 +26,7 @@ class Dashboard extends PureComponent {
     // Start the data request as soon as the Component is Mounted in the DOM
     componentDidMount() {
         this.requestApi()
+        // Update the application in real time every 7 seconds
         this.interval = setInterval(() => this.requestApi(), 7000)
 
         // Preparing information to transmit it to the App Master
@@ -77,6 +78,7 @@ class Dashboard extends PureComponent {
                 ]
             })
 
+            // Once the cryptocurrencies are packaged, the most trending one is raffled
             const { dataCurrencies } = this.state
             if (dataCurrencies.length === 6) {
                 const currencyTrending = dataCurrencies.sort((a, b) => b.porcent - a.porcent)
