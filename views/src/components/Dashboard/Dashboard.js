@@ -109,7 +109,13 @@ class Dashboard extends PureComponent {
             <div className='container'>
                 <div className="row">
                     {/* Iterate each cryptocurrency and return it as Component IF there is no Error */}
-                    {this.state.currencies.length === 0 ? <Error /> :
+                    {this.state.currencies.length === 0 ?
+                        <Error time={40000}
+                                padding="115px 50px"
+                                borderRadius="25px"
+                                backgroundColor="#fff"
+                                boxShadow="0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%)"
+                        /> :
                         this.state.currencies.map((currency, index) => (
                             <Currency key={currency.CoinInfo.Id}
                                 data={currency}

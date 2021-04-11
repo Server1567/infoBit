@@ -6,7 +6,13 @@ class Error extends Component {
         super(props)
 
         this.state = {
-            timeOver: false
+            timeOver: false,
+            timeOverSec: props.time,
+            // Component Customization States
+            padding: props.padding,
+            borderRadius: props.borderRadius,
+            backgroundColor: props.backgroundColor,
+            boxShadow: props.boxShadow
         }
     }
 
@@ -14,7 +20,7 @@ class Error extends Component {
     componentDidMount() {
         this.timeout = setTimeout(() => {
             this.setState({ timeOver: true })
-        }, 40000)
+        }, this.state.timeOverSec)
     }
 
     // Cleaning RAM
@@ -27,10 +33,21 @@ class Error extends Component {
         if (this.state.timeOver) {
             return (
                 <div className="col s12">
-                    <div className="card" style={{padding: '115px 50px', borderRadius: '25px'}}>
+                    <div className="card"
+                        style={{
+                            padding: this.state.padding,
+                            borderRadius: this.state.borderRadius,
+                            backgroundColor: this.state.backgroundColor,
+                            boxShadow: this.state.boxShadow
+                        }}>
                         <center>
                             <h1 style={{color: '#db4437'}}>Error 404 Not Found</h1>
-                            <h4 style={{color: 'darkgray'}}>The API has expired, contact with us to resolve it.</h4>
+                            <h4 style={{color: 'darkgray'}}>
+                                The API has expired,
+                                <a href='https://github.com/Server1567/infoBit/issues' target='_blank' rel='noreferrer'>contact</a>
+                                 with us to resolve it.
+                            </h4>
+                            <h5 style={{color: 'darkgray'}}>You can reload the page for try solve it.</h5>
                         </center>
                     </div>
                 </div>
@@ -39,7 +56,13 @@ class Error extends Component {
 
         return (
             <div className="col s12">
-                <div className="card" style={{padding: '115px 50px', borderRadius: '25px'}}>
+                <div className="card"
+                    style={{
+                        padding: this.state.padding,
+                        borderRadius: this.state.borderRadius,
+                        backgroundColor: this.state.backgroundColor,
+                        boxShadow: this.state.boxShadow
+                    }}>
                     <div>
                         {/* Spinner of Loading */}
                         <div className="preloader-wrapper small active" style={{display: 'inline-block'}}>
@@ -55,7 +78,7 @@ class Error extends Component {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <h3 style={{color: '#db4437'}}>Error connecting to the Market :/</h3>
                     </div>
                     <h4 style={{color: 'darkgray'}}>We are working to fix it :v</h4>

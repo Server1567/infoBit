@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import styles from './Trending.module.css'
 import PubSub from 'pubsub-js'
-import axios from 'axios'
 import ColorThief from 'colorthief/dist/color-thief.mjs'
 
 class Trending extends PureComponent {

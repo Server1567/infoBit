@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import styles from './About.module.css'
 import PubSub from 'pubsub-js'
+import Error from '../Error'
 import axios from 'axios'
 
 class About extends PureComponent {
@@ -42,7 +43,8 @@ class About extends PureComponent {
 
                 this.setState({ info: arrayInfo.slice(0, index).join('.') + ".", url })
             }).catch(e => {
-                this.setState({ info: "An error occurred while receiving data from the Backend." })
+                // If API consumption fails, handle the error in a friendly way
+                this.setState({ info: "" })
                 console.error(e)
             })
     }
@@ -110,7 +112,13 @@ class About extends PureComponent {
                         <br/>
                     </div>
                     <div className="col s12 l8">
-                        {this.state.info === "" ? "Loading info..." :
+                        {this.state.info === "" ?
+                            <Error time={20000}
+                                    padding="0px"
+                                    borderRadius="0px"
+                                    backgroundColor="#fff0"
+                                    boxShadow="none"
+                            /> :
                             <Fragment>
                                 <p className={styles.info}>
                                     {this.state.info}
