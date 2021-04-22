@@ -45,9 +45,6 @@ class Trending extends PureComponent {
 
         this.interval = setInterval(() => {
             this.imgOnTime.addEventListener('load', () => {
-                // If console.log() runs, the Component is done, then, remove that line.
-                // Else, work on it.
-                window.alert("INFORMA AL CREADOR SI VES ESTA VENTANA EMERGENTE")
                 this.getColor(this.imgOnTime)
             }, false)
         }, 7000)
@@ -58,9 +55,6 @@ class Trending extends PureComponent {
 
         if (this.interval) {
             this.imgOnTime.removeEventListener('load', () => {
-                // If console.log() runs, the Component is done, then, remove that line.
-                // Else, work on it.
-                window.alert("INFORMA AL CREADOR SI VES ESTA VENTANA EMERGENTE")
                 this.getColor(this.imgOnTime)
             }, false)
             clearInterval(this.interval)
@@ -111,16 +105,17 @@ class Trending extends PureComponent {
                     <div className="col s12 m6">
                         <div className={styles.marketing}>
                             <div style={{width: '211px'}}>
-                                <h2 className={styles.marketingLabel} style={{color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`}}>
+                                <h2 className={styles.marketingLabel}
+                                    style={{color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`}}>
                                     {this.state.trending.name} <br/>
                                     is
                                     <span className={styles.textRage}> growing</span>
                                 </h2>
                                 <br/>
                                 <button className={`${styles.investBtn}`} style={{
-                                        color: `rgb(${tone-r}, ${tone-g}, ${tone-b})`,
+                                        color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`,
                                         background: `rgb(${r}, ${g}, ${b})`,
-                                        border: `4px solid rgb(${tone-r}, ${tone-g}, ${tone-b})`
+                                        border: `4px solid rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`
                                     }}>
                                     invest now
                                 </button>

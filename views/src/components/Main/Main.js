@@ -26,7 +26,11 @@ class Main extends Component {
 
     // Switcher for Component Rendering
     shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.trending.symbol !== nextProps.trending.symbol) {
+        if (this.props.trending.name !== nextProps.trending.name) {
+            return true
+        }
+
+        if (this.props.trending.price !== nextProps.trending.price) {
             return true
         }
 

@@ -28,6 +28,15 @@
     margin-top: 10px;
 }
 
+.price {
+    float: right;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #005438;
+    margin: 0px 0px 15px 0px;
+}
+
 .porcent {
     float: right;
     font-family: 'Lato', sans-serif;

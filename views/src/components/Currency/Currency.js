@@ -163,6 +163,11 @@ class Currency extends Component {
             <div className="col s12 m6 l4">
                 <div className={`card ${styles.currency}`}>
                     <div className={`row ${styles.row}`}>
+                        <div className="col s12">
+                            <h5 className={styles.price}>
+                                ${new Intl.NumberFormat("en-US").format(currency.RAW.USD.PRICE)}
+                            </h5>
+                        </div>
                         <div className="col s4">
                             <div className={`row ${styles.row}`}>
                                 <div className='col s12'>

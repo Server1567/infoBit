@@ -44,7 +44,7 @@ class Error extends Component {
                             <h1 style={{color: '#db4437'}}>Error 404 Not Found</h1>
                             <h4 style={{color: 'darkgray'}}>
                                 The API has expired,
-                                <a href='https://github.com/Server1567/infoBit/issues' target='_blank' rel='noreferrer'>contact</a>
+                                <a href='https://github.com/Server1567/infoBit/issues' target='_blank' rel='noreferrer'> contact </a>
                                  with us to resolve it.
                             </h4>
                             <h5 style={{color: 'darkgray'}}>You can reload the page for try solve it.</h5>
