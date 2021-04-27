@@ -111,7 +111,6 @@ class Trending extends PureComponent {
                                     is
                                     <span className={styles.textRage}> growing</span>
                                 </h2>
-                                <br/>
                                 <button className={`${styles.investBtn}`} style={{
                                         color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`,
                                         background: `rgb(${r}, ${g}, ${b})`,

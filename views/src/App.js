@@ -41,7 +41,6 @@ class App extends Component {
         return (
             <Fragment>
                 <Header />
-                <br/><br/>
                 <Dashboard />
                 <Main switch={this.state.apiOn} trending={this.state.currencyTrending} />
             </Fragment>
