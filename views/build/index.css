@@ -13,11 +13,19 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @font-face {
     font-family: 'Road Rage';
     src: url('Road_Rage.otf');
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Styles of Materialize's Settings */
