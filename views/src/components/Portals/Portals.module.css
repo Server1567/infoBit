@@ -1,0 +1,10 @@
+/* Styles for the Portals Component */
+.logo {
+    width: 250px;
+    cursor: pointer;
+    transition: ease 0.25s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}

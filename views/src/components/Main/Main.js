@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Question from '../Question'
 import Trending from '../Trending'
 import About from '../About'
+import Portals from '../Portals'
 
 class Main extends Component {
     // Assignment of Component's State
@@ -44,6 +45,8 @@ class Main extends Component {
                     <Question text="What to invest in now?" />
                     <Trending currency={this.state.trending} />
                     <About currency={this.state.trending} />
+                    <Question text="Where to invest?" />
+                    <Portals />
                 </Fragment>
             )
         }
