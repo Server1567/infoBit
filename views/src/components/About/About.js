@@ -94,7 +94,7 @@ class About extends PureComponent {
 
     render() {
         return (
-            <div className={styles.about} ref={this.about} style={{marginTop: `${-222 - (this.state.pixels)}px`}}>
+            <div id='about' className={styles.about} ref={this.about} style={{marginTop: `${-222 - (this.state.pixels)}px`}}>
                 <div className="row">
                     <div className="col s12">
                         <center>

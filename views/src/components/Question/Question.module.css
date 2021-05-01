@@ -2,6 +2,7 @@
 .question {
     margin-top: 50px;
     padding: 50px;
+    overflow: hidden;
 }
 
 .text {

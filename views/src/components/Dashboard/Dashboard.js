@@ -106,7 +106,7 @@ class Dashboard extends PureComponent {
         }
 
         return (
-            <div className='container' style={{transform: 'scale(0.9)'}}>
+            <div id='cryptocurrencies' className='container' style={{transform: 'scale(0.9)'}}>
                 <div className="row">
                     {/* Iterate each cryptocurrency and return it as Component IF there is no Error */}
                     {this.state.currencies.length === 0 ?

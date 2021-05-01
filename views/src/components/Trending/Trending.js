@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { scrollTo } from 'scroll-js'
 import styles from './Trending.module.css'
 import PubSub from 'pubsub-js'
 import ColorThief from 'colorthief/dist/color-thief.mjs'
@@ -11,10 +12,12 @@ class Trending extends PureComponent {
         this.state = {
             trending: props.currency,
             color: [],
-            pixels: 0
+            pixels: 0,
+            layout: 100
         }
 
         this.logo = React.createRef()
+        this.portalsLink = this.portalsLink.bind(this)
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -26,6 +29,16 @@ class Trending extends PureComponent {
         return null
     }
 
+    // Link to Portals Component
+    portalsLink = () => {
+        let portalsOffsetTop = document.getElementById('portals').offsetTop
+        let offset = portalsOffsetTop - this.state.layout
+
+        scrollTo(window, {top: offset}).then(() => {
+            return null
+        })
+    }
+
     // Get Color From Image Logo
     getColor = (img) => {
         const colorThief = new ColorThief()
@@ -33,6 +46,10 @@ class Trending extends PureComponent {
     }
 
     componentDidMount() {
+        if (window.innerWidth > 600 && window.innerWidth < 993) {
+            this.setState({ layout: 200 })
+        }
+
         PubSub.subscribe('pixels', (e, data) => {
             this.setState({ pixels: data.pixels })
         })
@@ -83,7 +100,7 @@ class Trending extends PureComponent {
         var imageSRC = googleProxyURL + encodeURIComponent(imageURL)
 
         return (
-            <div className={styles.background} style={{
+            <div id='trending' className={styles.background} style={{
                     backgroundColor: `rgb(${r}, ${g}, ${b})`,
                     padding: `0 0 ${280 + this.state.pixels}px 0`
                 }}>
@@ -115,7 +132,8 @@ class Trending extends PureComponent {
                                         color: `rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`,
                                         background: `rgb(${r}, ${g}, ${b})`,
                                         border: `4px solid rgb(${toneText-r}, ${toneText-g}, ${toneText-b})`
-                                    }}>
+                                    }}
+                                    onClick={this.portalsLink}>
                                     invest now
                                 </button>
                             </div>

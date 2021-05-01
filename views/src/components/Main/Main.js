@@ -45,7 +45,7 @@ class Main extends Component {
                     <Question text="What to invest in now?" />
                     <Trending currency={this.state.trending} />
                     <About currency={this.state.trending} />
-                    <Question text="Where to invest?" />
+                    <Question text="Where to invest?" id='portals' />
                     <Portals />
                 </Fragment>
             )

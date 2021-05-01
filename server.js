@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/build', 'index.html'))
 })
 
-// What will happen when the '/info-trending' path is requested
+// What will happen when the '/info-trending' path is requested with data
 app.post('/info-trending', function (req, res, next) {
     try {
         // Validate if the client isn't sending data.

@@ -24,5 +24,15 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- React App with StateFul Components -->
     <div id="root"></div>
+
+    <!-- Script jQuery for offsetTop of the window -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on('beforeunload', function() {
+            window.setTimeout(function() {
+                $(window).scrollTop(0);
+            }, 0);
+        });
+    </script>
 </body>
 </html>

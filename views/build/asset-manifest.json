@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b3f3f79b.chunk.css",
-    "main.js": "/static/js/main.3934f06a.chunk.js",
-    "main.js.map": "/static/js/main.3934f06a.chunk.js.map",
+    "main.css": "/static/css/main.d6bf87c9.chunk.css",
+    "main.js": "/static/js/main.04dc375f.chunk.js",
+    "main.js.map": "/static/js/main.04dc375f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2d0d9e57.js",
     "runtime-main.js.map": "/static/js/runtime-main.2d0d9e57.js.map",
     "static/css/2.6dce921e.chunk.css": "/static/css/2.6dce921e.chunk.css",
-    "static/js/2.c2d5335d.chunk.js": "/static/js/2.c2d5335d.chunk.js",
-    "static/js/2.c2d5335d.chunk.js.map": "/static/js/2.c2d5335d.chunk.js.map",
+    "static/js/2.7fe0dd93.chunk.js": "/static/js/2.7fe0dd93.chunk.js",
+    "static/js/2.7fe0dd93.chunk.js.map": "/static/js/2.7fe0dd93.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.6dce921e.chunk.css.map": "/static/css/2.6dce921e.chunk.css.map",
-    "static/css/main.b3f3f79b.chunk.css.map": "/static/css/main.b3f3f79b.chunk.css.map",
-    "static/js/2.c2d5335d.chunk.js.LICENSE.txt": "/static/js/2.c2d5335d.chunk.js.LICENSE.txt",
+    "static/css/main.d6bf87c9.chunk.css.map": "/static/css/main.d6bf87c9.chunk.css.map",
+    "static/js/2.7fe0dd93.chunk.js.LICENSE.txt": "/static/js/2.7fe0dd93.chunk.js.LICENSE.txt",
     "static/media/BinanceLogo.b5d3a1eb.svg": "/static/media/BinanceLogo.b5d3a1eb.svg",
     "static/media/CoinbaseLogo.5108dc55.svg": "/static/media/CoinbaseLogo.5108dc55.svg",
     "static/media/KrakenLogo.4d712ed2.svg": "/static/media/KrakenLogo.4d712ed2.svg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.2d0d9e57.js",
     "static/css/2.6dce921e.chunk.css",
-    "static/js/2.c2d5335d.chunk.js",
-    "static/css/main.b3f3f79b.chunk.css",
-    "static/js/main.3934f06a.chunk.js"
+    "static/js/2.7fe0dd93.chunk.js",
+    "static/css/main.d6bf87c9.chunk.css",
+    "static/js/main.04dc375f.chunk.js"
   ]
 }
