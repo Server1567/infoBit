@@ -5,7 +5,7 @@ import Error from '../Error'
 import axios from 'axios'
 
 class About extends PureComponent {
-    // Assignment of properties and state's Component
+    // Assignment of Refs and State's Component
     constructor(props) {
         super(props)
 

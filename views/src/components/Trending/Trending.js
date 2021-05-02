@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
-import { scrollTo } from 'scroll-js'
 import styles from './Trending.module.css'
-import PubSub from 'pubsub-js'
 import ColorThief from 'colorthief/dist/color-thief.mjs'
+import PubSub from 'pubsub-js'
+import { scrollTo } from 'scroll-js'
 
 class Trending extends PureComponent {
     // Assignment of Component's State and Refs
@@ -34,9 +34,7 @@ class Trending extends PureComponent {
         let portalsOffsetTop = document.getElementById('portals').offsetTop
         let offset = portalsOffsetTop - this.state.layout
 
-        scrollTo(window, {top: offset}).then(() => {
-            return null
-        })
+        scrollTo(window, {top: offset}).then(() => null)
     }
 
     // Get Color From Image Logo
@@ -46,6 +44,7 @@ class Trending extends PureComponent {
     }
 
     componentDidMount() {
+        // Validate if is Tablet Screen
         if (window.innerWidth > 600 && window.innerWidth < 993) {
             this.setState({ layout: 200 })
         }

@@ -24,9 +24,7 @@ app.post('/info-trending', function (req, res, next) {
         // Request data from the API
         axios.get(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/info?symbol=${symbol}`, {
             headers: {
-                'X-CMC_PRO_API_KEY': 'dca0b296-abb2-482f-887e-2f0757bc3767',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Credentials': 'true'
+                'X-CMC_PRO_API_KEY': 'dca0b296-abb2-482f-887e-2f0757bc3767'
             }
         })
         .then(resp => {

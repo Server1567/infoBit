@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react'
-import Currency from '../Currency'
 import Error from '../Error'
+import Currency from '../Currency'
 import axios from 'axios'
 import PubSub from 'pubsub-js'
 
 class Dashboard extends PureComponent {
     // Assignment of State's Component
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
         this.state = {
             currencies: [],
@@ -99,10 +99,15 @@ class Dashboard extends PureComponent {
     }
 
     render() {
-        const { dataCurrencies } = this.state
-
+        const { dataCurrencies, currencies } = this.state
         if (dataCurrencies.length === 6) {
             PubSub.publish('api-on', true)
+        }
+        // Send a signal to prevent a bug when not receiving data
+        if (currencies.length === 0) {
+            PubSub.publish('error', true)
+        } else {
+            PubSub.publish('error', false)
         }
 
         return (

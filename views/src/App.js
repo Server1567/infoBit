@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import PubSub from 'pubsub-js'
 import 'materialize-css/dist/css/materialize.min.css'
 import Header from './components/Header'
 import Dashboard from './components/Dashboard'
 import Main from './components/Main'
 import Footer from './components/Footer'
+import PubSub from 'pubsub-js'
 
 class App extends Component {
     // Assignment of Component's State

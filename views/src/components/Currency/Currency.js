@@ -5,7 +5,7 @@ import Chart from 'chart.js'
 import PubSub from 'pubsub-js'
 
 class Currency extends Component {
-    // Assignment of properties and State's Component
+    // Assignment of Refs and State's Component
     constructor(props) {
         super(props)
 
@@ -25,6 +25,15 @@ class Currency extends Component {
         // Refs for the DOM Objects
         this.graphic = React.createRef()
         this.porcent = React.createRef()
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (prevState.currency.RAW.USD.PRICE !== nextProps.data.RAW.USD.PRICE) {
+            return {
+                currency: nextProps.data
+            }
+        }
+        return null
     }
 
     // Get the Price Now and Show it as a Tooltip
@@ -122,19 +131,6 @@ class Currency extends Component {
         return integer / base;
     }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-        if (prevState.currency.RAW.USD.PRICE !== nextProps.data.RAW.USD.PRICE) {
-            return {
-                currency: nextProps.data
-            }
-        }
-        return null
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.data.RAW.USD.PRICE !== this.props.data.RAW.USD.PRICE
-    }
-
     // Initialization of Tasks
     componentDidMount() {
         this.trade()
@@ -148,10 +144,14 @@ class Currency extends Component {
         this.trade()
         this.tradeGraphic()
     }
-
+    
     componentWillUnmount() {
         window.removeEventListener('DOMContentLoaded', this.tooltip(), false)
         clearInterval(this.currencyInterval)
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.data.RAW.USD.PRICE !== this.props.data.RAW.USD.PRICE
     }
 
     render() {

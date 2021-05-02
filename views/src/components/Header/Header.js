@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-import { scrollTo } from 'scroll-js'
-import styles from './Header.module.css'
 import logo from '../../res/infoBit-logo-black.png'
+import styles from './Header.module.css'
 import M from 'materialize-css'
 import 'material-icons'
+import { scrollTo } from 'scroll-js'
+import PubSub from 'pubsub-js'
 
 class Header extends Component {
     // Assignment of State and Refs
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
         this.state = {
-            layout: 100
+            layout: 100,
+            error: true
         }
 
         this.mobile = React.createRef()
@@ -19,76 +21,92 @@ class Header extends Component {
 
     // Link to Cryptocurrencies Component
     cryptocurrenciesLink = (isMobile) => {
-        scrollTo(window, {top: 0}).then(() => {
-            return null
-        })
+        if (this.state.error) {
+            M.toast({html: 'There is no content, reload the page.', classes: 'rounded'})
+        }
+        else {
+            scrollTo(window, {top: 0}).then(() => null)
 
-        // If is Mobile Screen Close de Sidenav when click on its items
-        if (isMobile) {
-            let instance = M.Sidenav.getInstance(this.mobile.current)
-            instance.close()
+            // If is Mobile Screen, Close de Sidenav when click on its items
+            if (isMobile) {
+                let instance = M.Sidenav.getInstance(this.mobile.current)
+                instance.close()
+            }
         }
     }
     // Link to Trending Component
     trendingLink = (isMobile) => {
-        let trendingOffsetTop = document.getElementById('trending').offsetTop
-        let offset = trendingOffsetTop - this.state.layout
+        if (this.state.error) {
+            M.toast({html: 'There is no content, reload the page.', classes: 'rounded'})
+        }
+        else {
+            let trendingOffsetTop = document.getElementById('trending').offsetTop
+            let offset = trendingOffsetTop - this.state.layout
 
-        scrollTo(window, {top: offset}).then(() => {
-            return null
-        })
+            scrollTo(window, {top: offset}).then(() => null)
 
-        // If is Mobile Screen Close de Sidenav when click on its items
-        if (isMobile) {
-            let instance = M.Sidenav.getInstance(this.mobile.current)
-            instance.close()
+            // If is Mobile Screen, Close de Sidenav when click on its items
+            if (isMobile) {
+                let instance = M.Sidenav.getInstance(this.mobile.current)
+                instance.close()
+            }
         }
     }
     // Link to About Component
     aboutLink = (isMobile) => {
-        let aboutOffsetTop = document.getElementById('about').offsetTop
-        let offset = aboutOffsetTop - this.state.layout
+        if (this.state.error) {
+            M.toast({html: 'There is no content, reload the page.', classes: 'rounded'})
+        }
+        else {
+            let aboutOffsetTop = document.getElementById('about').offsetTop
+            let offset = aboutOffsetTop - this.state.layout
 
-        scrollTo(window, {top: (offset - 25)}).then(() => {
-            return null
-        })
+            scrollTo(window, {top: (offset - 25)}).then(() => null)
 
-        // If is Mobile Screen Close de Sidenav when click on its items
-        if (isMobile) {
-            let instance = M.Sidenav.getInstance(this.mobile.current)
-            instance.close()
+            // If is Mobile Screen, Close de Sidenav when click on its items
+            if (isMobile) {
+                let instance = M.Sidenav.getInstance(this.mobile.current)
+                instance.close()
+            }
         }
     }
     // Link to Portals Component
     portalsLink = (isMobile) => {
-        let portalsOffsetTop = document.getElementById('portals').offsetTop
-        let offset = portalsOffsetTop - this.state.layout
+        if (this.state.error) {
+            M.toast({html: 'There is no content, reload the page.', classes: 'rounded'})
+        }
+        else {
+            let portalsOffsetTop = document.getElementById('portals').offsetTop
+            let offset = portalsOffsetTop - this.state.layout
 
-        scrollTo(window, {top: offset}).then(() => {
-            return null
-        })
+            scrollTo(window, {top: offset}).then(() => null)
 
-        // If is Mobile Screen Close de Sidenav when click on its items
-        if (isMobile) {
-            let instance = M.Sidenav.getInstance(this.mobile.current)
-            instance.close()
+            // If is Mobile Screen, Close de Sidenav when click on its items
+            if (isMobile) {
+                let instance = M.Sidenav.getInstance(this.mobile.current)
+                instance.close()
+            }
         }
     }
-
 
     // Arrow Function Menu on Mobile Screen with Materialize
     sideNav = () => M.Sidenav.init(this.mobile.current, { edge: 'right' })
 
     // Run de Menu Function
     componentDidMount() {
+        // Validate if is Tablet Screen
         if (window.innerWidth > 600 && window.innerWidth < 993) {
             this.setState({ layout: 200 })
         }
+        PubSub.subscribe('error', (e, data) => {
+            this.setState({ error: data })
+        })
         window.addEventListener('DOMContentLoaded', this.sideNav, false)
     }
 
     // Destroy de Menu Function
     componentWillUnmount() {
+        PubSub.unsubscribe('error')
         window.removeEventListener('DOMContentLoaded', this.sideNav, false)
     }
 
@@ -105,7 +123,7 @@ class Header extends Component {
                                 </a>
                             </div>
                             {/* Menu Button for Smarthphones Screen */}
-                            <a href="#!" data-target="mobile-demo" className="sidenav-trigger hide-on-med-and-up right" style={{height: '100%', display: 'flex', alignItems: 'center'}}>
+                            <a id="menu-button" href="#!" data-target="mobile-demo" className="sidenav-trigger hide-on-med-and-up right" style={{height: '100%', display: 'flex', alignItems: 'center'}}>
                                 <i className="material-icons" style={{color: 'black', fontSize: '30px'}}>menu</i>
                             </a>
                             {/* Navigation for Desktop */}
