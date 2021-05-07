@@ -108,7 +108,7 @@ class Trending extends PureComponent {
                         <div className={styles.illustration}>
                             <img
                                 src={imageSRC}
-                                alt="currency-logo"
+                                alt="Cryptocurrency trending"
                                 className={styles.imgLogo}
                                 crossOrigin="Anonymous"
                                 ref={this.logo} />

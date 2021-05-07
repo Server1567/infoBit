@@ -106,7 +106,7 @@ class About extends PureComponent {
                 <div className="row">
                     <div className="col s12 l4">
                         <div className={styles.logo}>
-                            <img src={this.state.trending.logo} className={`circle responsive-img ${styles.img}`} alt="Logo"/>
+                            <img src={this.state.trending.logo} className={`circle responsive-img ${styles.img}`} alt="Cryptocurrency trending"/>
                         </div>
                         <br/>
                         <br/>

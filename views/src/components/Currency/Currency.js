@@ -144,7 +144,7 @@ class Currency extends Component {
         this.trade()
         this.tradeGraphic()
     }
-    
+
     componentWillUnmount() {
         window.removeEventListener('DOMContentLoaded', this.tooltip(), false)
         clearInterval(this.currencyInterval)
@@ -173,7 +173,7 @@ class Currency extends Component {
                                 <div className='col s12'>
                                     <img
                                         src={`https://www.cryptocompare.com/${currency.CoinInfo.ImageUrl}`}
-                                        alt="currency-logo"
+                                        alt="Cryptocurrency trending"
                                         className={styles.logo} />
                                 </div>
                                 <div className='col s12'>

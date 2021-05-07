@@ -9,7 +9,7 @@ class Footer extends Component {
                 <div className="container">
                     <div className="row">
                         <div className={`col s12 m6 l6 ${styles.center}`}>
-                            <img className={styles.logo} src={infoBitLogo} alt="infoBitLogo" />
+                            <img className={styles.logo} src={infoBitLogo} alt="infobit" />
                             <p className="grey-text text-lighten-4">Learn what happens with Cryptocurrencies!</p>
                         </div>
                         <div className={`col s12 m6 l4 offset-l2 ${styles.center} ${styles.top}`}>

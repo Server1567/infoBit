@@ -119,7 +119,7 @@ class Header extends Component {
                             {/* InfoBit Logo */}
                             <div className={`brand-logo ${styles.divLogo}`}>
                                 <a href="http://infobit.herokuapp.com">
-                                    <img src={logo} alt="infoBit" className={`left ${styles.logoImg}`} />
+                                    <img src={logo} alt="infobit" className={`left ${styles.logoImg}`} />
                                 </a>
                             </div>
                             {/* Menu Button for Smarthphones Screen */}

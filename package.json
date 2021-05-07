@@ -18,7 +18,11 @@
     "project",
     "stateful-components"
   ],
-  "author": "Server1567",
+  "author": {
+      "name": "Junior Jimenez",
+      "email": "chapijalaj@gmail.com",
+      "url": "https://server1567.github.io/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Server1567/infoBit/issues"

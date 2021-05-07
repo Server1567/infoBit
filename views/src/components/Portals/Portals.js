@@ -14,7 +14,7 @@ class Portals extends Component {
                             <a href="http://gestyy.com/euC7Tc" target='_blank' rel='noreferrer'>
                                 <img className={`tooltipped ${styles.logo}`}
                                     src={BinanceLogo}
-                                    alt="BinanceLogo" />
+                                    alt="binance" />
                             </a>
                         </center>
                     </div>
@@ -23,7 +23,7 @@ class Portals extends Component {
                             <a href="http://gestyy.com/euC7Gc" target='_blank' rel='noreferrer'>
                                 <img className={styles.logo}
                                     src={CoinbaseLogo}
-                                    alt="CoinbaseLogo" />
+                                    alt="coinbase" />
                             </a>
                         </center>
                     </div>
@@ -32,7 +32,7 @@ class Portals extends Component {
                             <a href="http://gestyy.com/euC7KN" target='_blank' rel='noreferrer'>
                                 <img className={styles.logo}
                                     src={KrakenLogo}
-                                    alt="KrakenLogo" />
+                                    alt="kraken" />
                             </a>
                         </center>
                     </div>
