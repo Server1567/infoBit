@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "author": {
-      "name": "Junior Jimenez",
-      "email": "chapijalaj@gmail.com",
-      "url": "https://server1567.github.io/"
+    "name": "Junior Jimenez",
+    "email": "chapijalaj@gmail.com",
+    "url": "https://server1567.github.io/"
   },
   "dependencies": {
     "axios": "^0.21.1",
