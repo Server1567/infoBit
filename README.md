@@ -9,5 +9,5 @@ infoBit consumes two APIs, of which the main one is consumed from the client sid
 
 *You can support this project with a "grain of sand" on Patreon and be able to fund the API in real time in the backend to give the maximum experience.*
 
-<img src="http://infobit.herokuapp.com/static/media/infoBit-logo-black.f5eb40e9.png" alt="infobit"/>
+<img src="http://infobit.onrender.com/static/media/infoBit-logo-black.f5eb40e9.png" alt="infobit"/>
 Learn what happens with Cryptocurrencies!
