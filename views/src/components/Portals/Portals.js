@@ -11,7 +11,7 @@ class Portals extends Component {
                 <div className='row'>
                     <div className='col s12 m6'>
                         <center>
-                            <a href="http://gestyy.com/euC7Tc" target='_blank' rel='noreferrer'>
+                            <a href="https://ouo.io/dJAzMHx" target='_blank' rel='noreferrer'>
                                 <img className={`tooltipped ${styles.logo}`}
                                     src={BinanceLogo}
                                     alt="binance" />
@@ -20,7 +20,7 @@ class Portals extends Component {
                     </div>
                     <div className='col s12 m6'>
                         <center>
-                            <a href="http://gestyy.com/euC7Gc" target='_blank' rel='noreferrer'>
+                            <a href="https://ouo.io/N72pfA" target='_blank' rel='noreferrer'>
                                 <img className={styles.logo}
                                     src={CoinbaseLogo}
                                     alt="coinbase" />
@@ -29,7 +29,7 @@ class Portals extends Component {
                     </div>
                     <div className='col s12'>
                         <center>
-                            <a href="http://gestyy.com/euC7KN" target='_blank' rel='noreferrer'>
+                            <a href="https://ouo.io/cucVNq" target='_blank' rel='noreferrer'>
                                 <img className={styles.logo}
                                     src={KrakenLogo}
                                     alt="kraken" />
