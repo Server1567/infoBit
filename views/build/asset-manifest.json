@@ -1,29 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.d36a4e00.chunk.css",
-    "main.js": "/static/js/main.b33a82f1.chunk.js",
-    "main.js.map": "/static/js/main.b33a82f1.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2d0d9e57.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2d0d9e57.js.map",
-    "static/css/2.6dce921e.chunk.css": "/static/css/2.6dce921e.chunk.css",
-    "static/js/2.499d847c.chunk.js": "/static/js/2.499d847c.chunk.js",
-    "static/js/2.499d847c.chunk.js.map": "/static/js/2.499d847c.chunk.js.map",
+    "main.css": "/static/css/main.4af45ad8.css",
+    "main.js": "/static/js/main.067df9c3.js",
+    "static/media/MaterialIcons-Regular.ttf": "/static/media/MaterialIcons-Regular.d4f2bf2eff4f11652ef1.ttf",
+    "static/media/MaterialIcons-Regular.woff": "/static/media/MaterialIcons-Regular.f2a0933406f783065152.woff",
+    "static/media/MaterialIcons-Regular.eot": "/static/media/MaterialIcons-Regular.479700ea91d964d295d7.eot",
+    "static/media/MaterialIcons-Regular.woff2": "/static/media/MaterialIcons-Regular.12a47ed5fd5585f0f422.woff2",
+    "static/media/infoBit-logo-white.png": "/static/media/infoBit-logo-white.bf67a2f9f29347ab971a.png",
+    "static/media/infoBit-logo-black.png": "/static/media/infoBit-logo-black.f5eb40e9df145fb91769.png",
+    "static/media/KrakenLogo.svg": "/static/media/KrakenLogo.4d712ed2feb562053a6012e067867fa9.svg",
+    "static/media/CoinbaseLogo.svg": "/static/media/CoinbaseLogo.5108dc55d86f6353bb510948350ae33d.svg",
     "index.html": "/index.html",
-    "static/css/2.6dce921e.chunk.css.map": "/static/css/2.6dce921e.chunk.css.map",
-    "static/css/main.d36a4e00.chunk.css.map": "/static/css/main.d36a4e00.chunk.css.map",
-    "static/js/2.499d847c.chunk.js.LICENSE.txt": "/static/js/2.499d847c.chunk.js.LICENSE.txt",
-    "static/media/BinanceLogo.b5d3a1eb.svg": "/static/media/BinanceLogo.b5d3a1eb.svg",
-    "static/media/CoinbaseLogo.5108dc55.svg": "/static/media/CoinbaseLogo.5108dc55.svg",
-    "static/media/KrakenLogo.4d712ed2.svg": "/static/media/KrakenLogo.4d712ed2.svg",
-    "static/media/material-icons.css": "/static/media/MaterialIcons-Regular.f2a09334.woff",
-    "static/media/infoBit-logo-black.f5eb40e9.png": "/static/media/infoBit-logo-black.f5eb40e9.png",
-    "static/media/infoBit-logo-white.bf67a2f9.png": "/static/media/infoBit-logo-white.bf67a2f9.png"
+    "static/media/BinanceLogo.svg": "/static/media/BinanceLogo.b5d3a1eb38c9c93f98d3f8bef47e41ab.svg",
+    "main.4af45ad8.css.map": "/static/css/main.4af45ad8.css.map",
+    "main.067df9c3.js.map": "/static/js/main.067df9c3.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2d0d9e57.js",
-    "static/css/2.6dce921e.chunk.css",
-    "static/js/2.499d847c.chunk.js",
-    "static/css/main.d36a4e00.chunk.css",
-    "static/js/main.b33a82f1.chunk.js"
+    "static/css/main.4af45ad8.css",
+    "static/js/main.067df9c3.js"
   ]
 }
