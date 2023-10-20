@@ -118,7 +118,7 @@ class Header extends Component {
                         <div className={`nav-wrapper ${styles.navWrapper}`}>
                             {/* InfoBit Logo */}
                             <div className={`brand-logo ${styles.divLogo}`}>
-                                <a href="http://infobit.herokuapp.com">
+                                <a href="http://infobit.onrender.com">
                                     <img src={logo} alt="infobit" className={`left ${styles.logoImg}`} />
                                 </a>
                             </div>

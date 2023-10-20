@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.4af45ad8.css",
-    "main.js": "/static/js/main.067df9c3.js",
+    "main.css": "/static/css/main.0b96e755.css",
+    "main.js": "/static/js/main.6d907431.js",
     "static/media/MaterialIcons-Regular.ttf": "/static/media/MaterialIcons-Regular.d4f2bf2eff4f11652ef1.ttf",
     "static/media/MaterialIcons-Regular.woff": "/static/media/MaterialIcons-Regular.f2a0933406f783065152.woff",
     "static/media/MaterialIcons-Regular.eot": "/static/media/MaterialIcons-Regular.479700ea91d964d295d7.eot",
     "static/media/MaterialIcons-Regular.woff2": "/static/media/MaterialIcons-Regular.12a47ed5fd5585f0f422.woff2",
     "static/media/infoBit-logo-white.png": "/static/media/infoBit-logo-white.bf67a2f9f29347ab971a.png",
     "static/media/infoBit-logo-black.png": "/static/media/infoBit-logo-black.f5eb40e9df145fb91769.png",
-    "static/media/KrakenLogo.svg": "/static/media/KrakenLogo.4d712ed2feb562053a6012e067867fa9.svg",
+    "static/media/KrakenLogo.svg": "/static/media/KrakenLogo.11806f725a1890ca572c33001903fcd4.svg",
     "static/media/CoinbaseLogo.svg": "/static/media/CoinbaseLogo.5108dc55d86f6353bb510948350ae33d.svg",
     "index.html": "/index.html",
     "static/media/BinanceLogo.svg": "/static/media/BinanceLogo.b5d3a1eb38c9c93f98d3f8bef47e41ab.svg",
-    "main.4af45ad8.css.map": "/static/css/main.4af45ad8.css.map",
-    "main.067df9c3.js.map": "/static/js/main.067df9c3.js.map"
+    "main.0b96e755.css.map": "/static/css/main.0b96e755.css.map",
+    "main.6d907431.js.map": "/static/js/main.6d907431.js.map"
   },
   "entrypoints": [
-    "static/css/main.4af45ad8.css",
-    "static/js/main.067df9c3.js"
+    "static/css/main.0b96e755.css",
+    "static/js/main.6d907431.js"
   ]
 }
